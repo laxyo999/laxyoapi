@@ -1,0 +1,12 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class pages extends Model
+{
+    protected $fillable = [
+            'catg_id','content'
+        ];
+}

@@ -42,4 +42,12 @@ class User extends Authenticatable
         {
             return $this->hasMany(Product::class);
         }
+      public function pages()
+        {
+            return $this->hasMany(pages::class);
+        }
+      public function page_categories()
+        {
+            return $this->hasMany(page_categories::class);
+        }
 }

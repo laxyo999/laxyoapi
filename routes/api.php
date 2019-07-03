@@ -18,8 +18,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->group(function () {
     Route::get('user', 'PassportController@details');
  
-    Route::resource('products', 'ProductController');
+    Route::apiresource('products', 'ProductController');
+     Route::resource('pages', 'PagesController');
+      Route::apiresource('page_categories', 'PageCategoriesController');
  
 });
 Route::post('login', 'PassportController@login');
-Route::post('register', 'PassportController@register');
+Route::post('register', 'PassportController@register');                                            
