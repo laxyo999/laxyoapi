@@ -15,12 +15,12 @@ class CreatePagesTable extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->BigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-         
-            $table->BigInteger('catg_id')->unsigned();
+             $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('catg_id')->unsigned();
             $table->foreign('catg_id')->references('id')->on('page_categories')->onDelete('cascade')->onUpdate('cascade');
-            $table->longtext('content');
+            $table->text('content');
+            $table->string('slug');
             $table->timestamps();
         });
     }

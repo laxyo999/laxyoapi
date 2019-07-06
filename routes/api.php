@@ -14,14 +14,11 @@ use Illuminate\Http\Request;
 */
 
 
- 
-Route::middleware('auth:api')->group(function () {
+ Route::middleware('auth:api')->group(function () {
     Route::get('user', 'PassportController@details');
- 
-    Route::apiresource('products', 'ProductController');
-     Route::resource('pages', 'PagesController');
-      Route::apiresource('page_categories', 'PageCategoriesController');
+     Route::apiResource('Page', 'Api\PageController');
+      Route::apiResource('PageCategory', 'Api\PageCategoryController');
  
 });
 Route::post('login', 'PassportController@login');
-Route::post('register', 'PassportController@register');                                            
+Route::post('register', 'PassportController@register');                                              

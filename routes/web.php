@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::Resource('/admin/Page', 'PageController', [
+    'as' => 'admin'
+]);
+Route::Resource('/admin/PageCategory', 'PageCategoryController', [
+    'as' => 'admin'
+]);
+// Route::resource('page_categories', 'PageCategoriesController');
+
+
+// Route::group(['prefix' => 'admin'], function () {
+//     Route::get('/PageCategory', 'PageCategoryController@index');
+//     Route::match(['get', 'post'], 'create', 'PageCategoryController@create');
+//     Route::match(['get', 'put'], 'update/{id}', 'PageCategoryController@update');
+//     Route::delete('delete/{id}', 'PageCategoryController@delete');
+// });
